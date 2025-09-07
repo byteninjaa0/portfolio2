@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin, FaDiscord, FaXTwitter, FaInstagram } from "react-icons/fa6";
-export default function SocialLinks() {
+
+function SocialLinks() {
   return (
     <div
       style={{
@@ -54,7 +55,7 @@ export default function SocialLinks() {
         LinkedIn
       </a>
 
-      <a
+      {/* <a
         href="https://discord.com/"
         style={{
           display: "flex",
@@ -72,7 +73,7 @@ export default function SocialLinks() {
       >
         <FaDiscord size={18} />
         Discord Server
-      </a>
+      </a> */}
 
       <a
         href="https://x.com/"
@@ -117,3 +118,4 @@ export default function SocialLinks() {
     </div>
   );
 }
+export default SocialLinks;

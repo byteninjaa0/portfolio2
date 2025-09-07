@@ -1,0 +1,11 @@
+/* The default light theme remains the same */
+:root {
+  --background-color: #ffffff;
+  --text-color: #101212;
+}
+
+/* This is more specific than the global `body` selector */
+[data-theme="dark"] {
+  --background-color: #101212;
+  --text-color: #ffffff;
+}

@@ -1,199 +1,11 @@
-import { useState } from "react";
-import { FaGithub, FaLinkedin, FaDiscord, FaXTwitter, FaInstagram } from "react-icons/fa6";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Navbar from "./Navbar";
+import SocialLinks from "./SocialLink";
+import { ThemeProvider } from './ThemeContext';
+import ThemeToggle from './ThemeToggle';
+import './style.css'; // Import your CSS
+import Post from "./Post";
 
-import { FaSun, FaMoon } from "react-icons/fa";
-
-
-function Navbar() {
-  const [theme, setTheme] = useState("dark");
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-    document.body.style.background = theme === "dark" ? "#fff" : "#151719";
-    document.body.style.color = theme === "dark" ? "#000" : "#fff";
-  };
-  const linkStyle = {
-    fontSize: "16px",
-    color: "grey",
-    textDecoration: "none",
-    marginRight: "1rem",
-    transition: "color 0.2s ease-in-out",
-    cursor: "pointer",
-  };
-
-  const [hovered, setHovered] = useState(null);
-
-  const links = ["home", "blog", "notes", "projects"];
-
-  return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        lineHeight: "100%",
-        width: "720px",
-        maxWidth: "calc(100% - 2em)",
-        margin: "auto",
-        paddingTop: "5em",
-      }}
-    >
-      <img
-        src="/logo.jpg"
-        alt="Logo"
-        style={{ height: "50px", objectFit: "contain" }}
-      />
-
-
-      <nav>
-        {links.map((link, i) => (
-          <Link
-            key={i}
-            to={link === "home" ? "/" : `/${link}`}
-            style={{
-              ...linkStyle,
-              color: hovered === i ? "white" : "grey",
-            }}
-            onMouseEnter={() => setHovered(i)}
-            onMouseLeave={() => setHovered(null)}
-          >
-            {link}
-          </Link>
-        ))}
-        <button
-          onClick={toggleTheme}
-          style={{
-            background: "transparent",
-            border: "none",
-            cursor: "pointer",
-            fontSize: "20px",
-            marginLeft: "1rem",
-            color: theme === "dark" ? "white" : "black",
-          }}
-        ></button>
-      </nav>
-    </div>
-  );
-}
-
-function SocialLinks() {
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "12px",
-        justifyContent: "center",
-        marginTop: "20px",
-      }}
-    >
-      <span style={{ color: "white", fontFamily: "Arial, sans-serif" }}>
-        Find me on
-      </span>
-
-      <a
-        href="https://github.com/"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "6px",
-          textDecoration: "none",
-          backgroundColor: "#333",
-          color: "white",
-          padding: "6px 12px",
-          borderRadius: "6px",
-          fontFamily: "Arial, sans-serif",
-          fontSize: "14px",
-          fontWeight: "bold",
-        }}
-      >
-        <FaGithub size={18} />
-        GitHub
-      </a>
-
-      <a
-        href="https://linkedin.com/"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "6px",
-          textDecoration: "none",
-          backgroundColor: "#0A66C2",
-          color: "white",
-          padding: "6px 12px",
-          borderRadius: "6px",
-          fontFamily: "Arial, sans-serif",
-          fontSize: "14px",
-          fontWeight: "bold",
-        }}
-      >
-        <FaLinkedin size={18} />
-        LinkedIn
-      </a>
-
-      <a
-        href="https://discord.com/"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "6px",
-          textDecoration: "none",
-          backgroundColor: "#5865F2",
-          color: "white",
-          padding: "6px 12px",
-          borderRadius: "6px",
-          fontFamily: "Arial, sans-serif",
-          fontSize: "14px",
-          fontWeight: "bold",
-        }}
-      >
-        <FaDiscord size={18} />
-        Discord Server
-      </a>
-
-      <a
-        href="https://x.com/"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "6px",
-          textDecoration: "none",
-          backgroundColor: "#111",
-          color: "white",
-          padding: "6px 12px",
-          borderRadius: "6px",
-          fontFamily: "Arial, sans-serif",
-          fontSize: "14px",
-          fontWeight: "bold",
-        }}
-      >
-        <FaXTwitter size={18} />
-        x.com
-      </a>
-
-      <a
-        href="https://instagram.com/"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "6px",
-          textDecoration: "none",
-          background:
-            "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)",
-          color: "white",
-          padding: "6px 12px",
-          borderRadius: "6px",
-          fontFamily: "Arial, sans-serif",
-          fontSize: "14px",
-          fontWeight: "bold",
-        }}
-      >
-        <FaInstagram size={18} />
-        Instagram
-      </a>
-    </div>
-  );
-}
 
 
 function Home() {
@@ -234,22 +46,36 @@ function Layout({ children }) {
   )
 }
 
-function Blog(){
-
+function Blog() {
+  return(
+    <div>
+      <h3 style={{marginTop:"4rem",marginLeft:"1rem",marginBottom:"4rem",fontSize:"1.2rem"}}>Blog</h3>
+  <Post />
+  </div>
+  )
 }
 
 function App() {
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#121212" }}>
-      <Router>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </Layout>
-      </Router>
+    <div className="min-h-screen bg-white text-black dark:bg-[#121212] dark:text-white">
+      <div style={{
+        width: "720px",
+        maxWidth: "calc(100% - 2em)",
+        margin: "auto",
+        marginTop: "4rem"
+      }}>
+        <Router>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/blog" element={<Blog />} />
+            </Routes>
+          </Layout>
+        </Router>
+      </div>
     </div>
   )
 }
+
 
 export default App;
