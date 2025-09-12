@@ -11,7 +11,7 @@ function SocialLinks() {
         marginTop: "20px",
       }}
     >
-      <span style={{ color: "white", fontFamily: "Arial, sans-serif" }}>
+      <span style={{ fontFamily: "Arial, sans-serif" }}>
         Find me on
       </span>
 

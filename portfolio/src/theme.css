@@ -1,7 +1,7 @@
 /* The default light theme remains the same */
 :root {
-  --background-color: #ffffff;
-  --text-color: #101212;
+  --background-color: #be0808;
+  --text-color: #39b6b6;
 }
 
 /* This is more specific than the global `body` selector */
