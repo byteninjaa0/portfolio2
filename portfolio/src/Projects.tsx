@@ -1,43 +1,35 @@
+import ProjectCard from "./ProjectCard";
+
 function Projects() {
-    return (
-        <div>
-            <br />
-            <br />
-            <span style={{ marginLeft: "1rem", fontSize: "1.3rem" }}>Projects</span>
-            <br />
-            <br />
-            <section style={{ display: "flex", flexDirection: "column", gap: "1.45rem" }}>
-                <article style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                    <header style={{ display: "flex", alignItems: "center" }}>
-                        <div
-                            style={{
-                                borderRadius: "100%",
-                                width: "48px",
-                                height: "48px",
-                                objectFit: "cover",
-                                aspectRatio: "1 / 1",
-                                marginRight: "2rem"
-                            }}
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path d="M12 2L15 8H9L12 2Z" />
-                            </svg>
+  const projects = [
+    {
+      title: "My Portfolio",
+      description: "A simple sleek portfolio made in react.",
+      year: "2025",
+      status: "Completed",
+      link: "/"
+    },
+    {
+      title: "HailOS",
+      description: "A tiny UNIX like OS with basic commands",
+      year: "2024",
+      status: "Completed",
+      link: "https://github.com/byteninjaa0/HailOS"
+    }
+  ];
 
-                        </div>
+  return (
+    <div>
+      <br />
+      <br />
+      <div className="ml-4 text-lg">Projects</div>
+      <br />
 
-
-                    </header>
-                </article>
-
-            </section>
-        </div>
-    )
+      {projects.map((project, index) => (
+        <ProjectCard key={index} {...project} />
+      ))}
+    </div>
+  );
 }
 
 export default Projects;

@@ -5,7 +5,20 @@
   --text-color-light: #fbf9f9;
   /* ... other light theme variables */
 }
-/* #333333 */
+/* navbar.css */
+.nav-btn {
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+  color: inherit;
+}
+
+.nav-btn:hover {
+  color: var(--hover-color);
+}
+
 
 [data-theme='dark'] {
   /* Dark Theme */
