@@ -24,7 +24,7 @@ function Notes() {
         >
           {note.title}
         </Link>
-        <span className="ml-2 text-[12px] font-thin">
+        <span className="ml-2 text-[12px] text-gray-600">
           {new Date(note.date).toDateString()}
         </span>
       </div>

@@ -22,7 +22,7 @@ function Projects() {
     <div>
       <br />
       <br />
-      <div className="ml-4 text-lg">Projects</div>
+      <div className="ml-4 text-xl">Projects</div>
       <br />
 
       {projects.map((project, index) => (

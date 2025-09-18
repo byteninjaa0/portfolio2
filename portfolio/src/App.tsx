@@ -11,7 +11,8 @@ import Home from "./Home";
 function App() {
   return (
     <div className="min-h-screen">
-  <div className="w-[720px] max-w-[calc(100%-2em)] mx-auto mt-16">
+<div className="w-full max-w-[calc(100%-0.1em)] mt-3 sm:w-[720px] sm:mx-auto sm:mt-16">
+
         <Router>
           <Layout>
             <Routes>

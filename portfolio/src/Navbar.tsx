@@ -18,7 +18,8 @@ function Navbar() {
   const links = ["home", "blog", "notes", "projects"];
 
   return (
-    <div className="flex justify-between items-center leading-none w-[720px] max-w-[calc(100%-2em)] mx-auto pt-2">
+   <div className="flex justify-between items-center leading-none w-full max-w-[720px] px-4 mx-auto">
+
       {/* Logo links to home */}
       <Link to="/">
         <img
@@ -31,7 +32,9 @@ function Navbar() {
       <nav className="flex items-center font-medium">
         {links.map((link, i) => {
           const path = link === "home" ? "/" : `/${link}`;
-          const isActive = location.pathname === path;
+         const isActive =
+  path === "/" ? location.pathname === "/" : location.pathname.startsWith(path);
+
 
           return (
             <Link
@@ -59,7 +62,7 @@ function Navbar() {
             theme === "dark" ? "text-white" : "text-black"
           }`}
         >
-          {theme === "dark" ? (
+          {theme === "light" ? (
             // 🌙 Slim moon
             <svg
               xmlns="http://www.w3.org/2000/svg"

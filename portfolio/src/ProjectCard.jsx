@@ -6,7 +6,7 @@ function ProjectCard({ title, description, year, status, link }) {
       {/* Left side: Logo + Info */}
       <div className="flex items-center gap-4">
         {/* Circle Logo */}
-        <div className="w-10 h-10 rounded-full border-4 border-gray-400 border-t-transparent animate-spin-slow" />
+        <div className="w-10 h-10 rounded-full border-4 border-gray-600 border-t-transparent animate-spin-slow" />
 
         {/* Text Info */}
         <div>
@@ -16,13 +16,13 @@ function ProjectCard({ title, description, year, status, link }) {
           >
             {title}
           </Link>
-          <p className="text-gray-400 text-sm">{description}</p>
+          <p className="text-gray-600 text-sm">{description}</p>
         </div>
       </div>
 
       {/* Right side: Status + Year */}
       <div className="text-right">
-        <p className="text-gray-400 text-sm">{status}</p>
+        <p className="text-gray-600 text-sm">{status}</p>
         <p className="font-semibold">{year}</p>
       </div>
     </div>

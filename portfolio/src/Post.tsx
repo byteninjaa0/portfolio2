@@ -2,14 +2,12 @@ import { Link } from "react-router-dom";
 
 function Post({ title, description, date, image, slug }) {
   return (
-    <Link to={`/blog/${slug}`} style={{ textDecoration: "none", color: "inherit" }}>
-      <div style={{ display: "flex", margin: "1rem", gap: "2rem", alignItems: "flex-start" }}>
+    <Link to={`/blog/${slug}`} className="no-underline text-inherit">
+      <div className="flex items-start gap-6 m-4">
         <div>
-          <span style={{ fontWeight: "500", fontSize: "1.1rem" }}>{title}</span>
-          <p style={{ lineHeight: "1.1", fontSize: ".9rem", marginTop: "0.3rem", color: "#6b6f72" }}>
-            {description}
-          </p>
-          <span style={{ fontSize: "0.7em" }}>
+          <span className="font-medium text-lg">{title}</span>
+          <p className="text-sm text-gray-600 mt-1 leading-snug">{description}</p>
+          <span className="text-xs">
             <time dateTime={date}>{new Date(date).toDateString()}</time>
           </span>
         </div>
@@ -17,12 +15,11 @@ function Post({ title, description, date, image, slug }) {
           src={image}
           alt={title}
           loading="eager"
-          style={{ width: "200px", height: "100px", borderRadius: "0.7rem", objectFit: "cover", flexShrink: 0 }}
+          className="hidden sm:block w-[200px] h-[100px] rounded-lg object-cover flex-shrink-0"
         />
       </div>
     </Link>
   );
 }
-
 
 export default Post;

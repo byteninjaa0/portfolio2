@@ -22,7 +22,7 @@ function Blog() {
     <div>
         <br />
         <br />
-        <span className="ml-[1em] text-xl">Blog</span>
+        <span className="ml-[0.7em] text-xl">Blog</span>
         <br />  
         <br />
       {posts.map((post) => (

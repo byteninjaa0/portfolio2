@@ -16,13 +16,15 @@ function SocialLinks() {
         gap: "10px",
         justifyContent: "center",
         marginTop: "20px",
-        marginRight:"3rem"
+        // marginRight:"3rem",
+        flexWrap:"wrap",
+        marginBottom:"1rem"
       }}
     >
       <span style={{ fontFamily: "Arial, sans-serif" }}>Find me on</span>
 
       <a
-        href="https://github.com/"
+        href="https://github.com/byteninjaa0"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -44,7 +46,7 @@ function SocialLinks() {
       </a>
 
       <a
-        href="https://linkedin.com/"
+        href="https://www.linkedin.com/in/sohail-khan-187969208/"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -66,7 +68,7 @@ function SocialLinks() {
       </a>
 
       <a
-        href="https://t.me/"
+        href="https://t.me/byteninjaa0"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -90,7 +92,7 @@ function SocialLinks() {
         
 
       <a
-        href="https://instagram.com/"
+        href="https://instagram.com/_sohxilkhxn"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -112,7 +114,7 @@ function SocialLinks() {
         Instagram
       </a>
       <a
-  href="https://discord.gg/your-invite-code"
+  href="https://discord.gg/csBCYCCb"
   target="_blank"
   rel="noopener noreferrer"
   style={{
