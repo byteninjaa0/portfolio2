@@ -15,7 +15,7 @@ function Navbar() {
     );
   };
 
-  const links = ["home", "blog", "notes", "projects"];
+  const links = [ "blog", "notes", "projects"];
 
   return (
    <div className="flex justify-between items-center leading-none w-full max-w-[720px] px-4 mx-auto">
